@@ -1,5 +1,9 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { userTransactionApi, setToken } from "../../api/userTransactionApi.js";
+import {
+  userTransactionApi,
+  setToken,
+  removeToken,
+} from "../../api/userTransactionApi.js";
 
 const handleAuthError = (error, thunkAPI) => {
   let userMessage = "An error occurred, please try again."; // Varsayılan hata mesajı
@@ -94,9 +98,10 @@ export const refreshUser = createAsyncThunk(
 export const logout = createAsyncThunk("auth/logout", async (_, thunkAPI) => {
   try {
     const { data } = await userTransactionApi.delete("/api/auth/sign-out");
-    // removeToken();
+    removeToken();
     return data;
   } catch (error) {
+    removeToken();
     return thunkAPI.rejectWithValue(
       error.response?.data?.message || error.message
     );

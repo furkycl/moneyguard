@@ -7,31 +7,28 @@ import { RotatingLines } from "react-loader-spinner";
 import styles from "./TransactionsList.module.css";
 
 const TransactionsList = () => {
-  const [sortOrder, setSortOrder] = useState("desc"); // 🔹 Default: en son işlemler üstte
+  const [sortOrder, setSortOrder] = useState("desc");
   const { transactionsList, isLoading, error, isEditModalOpen } = useSelector(
     (state) => state.transactions
   );
 
-  if (error) return <div>Hata oluştu: {error}</div>;
+  if (error) return <div>Error: {error}</div>;
   if (!transactionsList || transactionsList.length === 0) {
     return <EmptyTransactions />;
   }
 
-  // 🔹 Tarih filtresi (sadece gelecekteki işlemleri çıkar, bugünü dahil et)
   const now = new Date();
   const filteredTransactions = transactionsList.filter((transaction) => {
     const transDate = new Date(transaction.transactionDate || transaction.date);
-    return transDate.getTime() <= now.getTime(); // timezone farkı etkilenmez
+    return transDate.getTime() <= now.getTime();
   });
 
-  // 🔹 Sıralama (desc = en son işlemler üstte)
   const sortedTransactions = [...filteredTransactions].sort((a, b) => {
     const dateA = new Date(a.transactionDate || a.date);
     const dateB = new Date(b.transactionDate || b.date);
     return sortOrder === "asc" ? dateA - dateB : dateB - dateA;
   });
 
-  // 🔹 Sıralama butonu
   const handleSortClick = () => {
     setSortOrder((prev) => (prev === "asc" ? "desc" : "asc"));
   };
@@ -49,7 +46,7 @@ const TransactionsList = () => {
               >
                 Date
                 <span className={styles.sortIcon}>
-                  {sortOrder === "asc" ? "▲" : "▼"}
+                  {sortOrder === "asc" ? "^" : "v"}
                 </span>
               </th>
               <th className={styles.th}>Type</th>

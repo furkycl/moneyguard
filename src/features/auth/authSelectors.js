@@ -3,4 +3,5 @@ export const selectUser = (state) => state.auth.user;
 export const selectIsRefreshing = (state) => state.auth.isRefreshing;
 export const selectAuthError = (state) => state.auth.error;
 export const selectIsLoading = (state) => state.auth.isLoading;
-export const selectUsername = (state) => state.auth.user.username;
+export const selectUsername = (state) =>
+  state.auth.user?.name || state.auth.user?.username || "";

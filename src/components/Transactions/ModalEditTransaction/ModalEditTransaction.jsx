@@ -24,7 +24,7 @@ const ModalEditTransaction = () => {
 
         <h2 className={styles.editModalTitle}>Edit Transaction</h2>
 
-        <EditTransactionForm onSaveSuccess={handleClose} />
+        <EditTransactionForm onSaveSuccess={handleClose} onClose={handleClose} />
       </div>
     </div>
   );

@@ -1,61 +1,12 @@
-/* OVERLAY + DIALOG */
-.overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 9990;
-  /* daha açık mor & blur */
-  background: radial-gradient(
-      60% 60% at 50% 30%,
-      rgba(128, 90, 200, 0.35) 0%,
-      rgba(25, 20, 40, 0.6) 60%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(35, 25, 60, 0.55) 0%,
-      rgba(20, 15, 30, 0.75) 100%
-    );
-  backdrop-filter: blur(6px);
+.content {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px;
-}
-
-/* Modal kart daha açık mor tonla */
-.modal {
-  position: relative;
-  width: 100%;
-  max-width: 560px;
-  border-radius: 20px;
-  padding: 24px 20px;
-  background: linear-gradient(
-    145deg,
-    rgba(65, 40, 120, 1) 0%,
-    rgba(40, 25, 75, 1) 100%
-  );
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-}
-
-.closeBtn {
-  position: absolute;
-  top: 12px;
-  right: 16px;
-  height: 32px;
-  width: 32px;
-  border-radius: 50%;
-  font-size: 24px;
-  line-height: 28px;
-  color: var(--font-color-white);
-  background: transparent;
-  transition: transform 0.2s ease, background 0.2s ease;
-}
-.closeBtn:hover {
-  transform: scale(1.05);
-  background: rgba(255, 255, 255, 0.08);
+  flex-direction: column;
+  gap: 12px;
+  padding: 8px 0;
 }
 
 .title {
-  margin-bottom: 25px;
+  margin-bottom: 12px;
   font-size: 24px;
   font-weight: 600;
   text-align: center;
@@ -86,6 +37,7 @@
   justify-content: center;
   cursor: pointer;
 }
+
 .switchButton {
   width: 36px;
   height: 36px;
@@ -101,11 +53,13 @@
   top: 0;
   box-shadow: 0 6px 15px var(--yellow--plus-shadow);
 }
+
 .income {
   background-color: var(--yellow);
   color: var(--font-color-white);
   left: 0;
 }
+
 .expense {
   background-color: var(--red);
   color: var(--font-color-white);
@@ -125,12 +79,11 @@
   gap: 12px;
 }
 
-/* Input Group */
 .inputGroup {
   display: flex;
   flex-direction: column;
   position: relative;
-  margin-bottom: 30px; /* Karakter sayacı ve hata mesajı için boşluk */
+  margin-bottom: 30px;
 }
 
 .input,
@@ -140,14 +93,13 @@
   border: none;
   border-bottom: 2px solid rgba(255, 255, 255, 0.4);
   background: transparent;
-  color: #ffffff; /* input yazısı tam beyaz */
+  color: #ffffff;
   font-size: 16px;
   outline: none;
   font-family: var(--font-family-base);
   resize: none;
 }
 
-/* Placeholder tam beyaz */
 .input::placeholder,
 .textarea::placeholder {
   color: #ffffff;
@@ -163,7 +115,6 @@
   border-bottom-color: var(--red) !important;
 }
 
-/* Hata mesajı */
 .errorText {
   position: absolute;
   bottom: -18px;
@@ -175,13 +126,12 @@
   z-index: 10;
 }
 
-/* Karakter sayacı */
 .commentCounter {
   position: absolute;
   right: 0;
   bottom: -18px;
   font-size: 12px;
-  color: var(--font-color-white-60); /* soluk beyaz */
+  color: var(--font-color-white-60);
   z-index: 10;
 }
 
@@ -196,58 +146,11 @@
 .submitBtn {
   width: 280px;
 }
+
 .cancelBtn {
   width: 280px;
 }
 
-/* React Datepicker */
-.react-datepicker__input-container input {
-  color: #fff !important;
-  font-weight: 500;
-}
-
-/* React Select */
-.rs__control {
-  background: transparent !important;
-  border: none !important;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.4) !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-}
-
-.rs__menu {
-  background: linear-gradient(
-    0deg,
-    rgba(110, 76, 190, 0.9) 0%,
-    rgba(95, 55, 160, 0.9) 50%,
-    rgba(120, 90, 200, 0.7) 100%
-  ) !important;
-  border-radius: 16px !important;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35) !important;
-}
-
-.rs__option--is-focused {
-  background-color: rgba(255, 134, 141, 0.25) !important;
-  color: #ff868d !important;
-}
-
-.rs__option--is-selected {
-  background: linear-gradient(
-    96.76deg,
-    #ffc727 -16.42%,
-    #9e40ba 97.04%,
-    #7000ff 150.71%
-  ) !important;
-  color: #fff !important;
-  border-radius: 8px;
-}
-
-.rs__single-value,
-.rs__placeholder {
-  color: #ffffff !important;
-}
-
-/* Calendar popup */
 .calendar {
   background: linear-gradient(
     180deg,
@@ -269,39 +172,11 @@
   cursor: pointer;
 }
 
-/* Tarih inputu sağ boşluğu */
 .row .inputGroup .input {
   padding-right: 40px;
 }
 
-/* RESPONSIVE */
-/* Mobile */
 @media (max-width: 767.98px) {
-  .overlay {
-    background: radial-gradient(
-        70% 70% at 50% 20%,
-        rgba(110, 76, 190, 0.4) 0%,
-        rgba(12, 9, 20, 0.75) 60%
-      ),
-      linear-gradient(
-        180deg,
-        rgba(20, 15, 40, 0.8) 0%,
-        rgba(15, 10, 25, 0.9) 100%
-      );
-    backdrop-filter: blur(4px);
-  }
-
-  .modal {
-    max-width: 360px;
-    border-radius: 16px;
-    padding: 20px 16px;
-    background: linear-gradient(
-      145deg,
-      rgba(75, 45, 140, 1) 0%,
-      rgba(50, 30, 95, 1) 100%
-    );
-  }
-
   .row {
     grid-template-columns: 1fr;
   }
@@ -311,37 +186,18 @@
   }
 }
 
-/* Tablet */
-@media (min-width: 768px) and (max-width: 1279.98px) {
-  .modal {
-    max-width: 520px;
-    padding: 28px 24px;
-  }
+@media (min-width: 768px) {
   .submitBtn,
   .cancelBtn {
     width: 300px;
   }
 }
 
-/* Desktop */
-@media (min-width: 1280px) {
-  .modal {
-    max-width: 640px;
-    padding: 32px 28px;
-  }
-  .submitBtn,
-  .cancelBtn {
-    width: 300px;
-  }
-}
-
-/* React Select Hover Fallback */
 :global(.rs__option--is-focused) {
   color: #ff868d !important;
   background: rgba(255, 134, 141, 0.18) !important;
 }
 
-/* DatePicker */
 :global(.react-datepicker__day) {
   color: rgba(255, 255, 255, 0.95);
 }

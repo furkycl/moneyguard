@@ -14,6 +14,9 @@ const RegistrationPage = React.lazy(() =>
 const DashboardPage = React.lazy(() =>
   import("../pages/DashboardPage/DashboardPage")
 );
+const CurrencyPage = React.lazy(() =>
+  import("../pages/CurrencyPage/CurrencyPage")
+);
 const NotFoundPage = React.lazy(() =>
   import("../pages/NotFoundPage/NotFoundPage")
 );
@@ -88,6 +91,7 @@ export default function AppRouter() {
           >
             <Route index element={<HomeTableLazy />} />
             <Route path="statistics" element={<StatisticsLazy />} />
+            <Route path="currency" element={<CurrencyPage />} />
           </Route>
 
           {/* Diğer */}
