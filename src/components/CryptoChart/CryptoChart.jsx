@@ -129,7 +129,7 @@ export default function CryptoChart() {
 
   const lastRow = useMemo(() => (data && data.length ? data[data.length - 1] : null), [data]);
 
-  if (loading) return <div className={styles.loading}>Loading crypto…</div>;
+  if (loading) return <div className={styles.loading}>Loading crypto...</div>;
   if (error) return <div className={styles.error}>{error}</div>;
 
   return (
