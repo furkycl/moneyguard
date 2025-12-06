@@ -18,6 +18,10 @@ export const setToken = (token) => {
   }
 };
 
+export const removeToken = () => {
+  delete userTransactionApi.defaults.headers.common["Authorization"];
+};
+
 // --- Transactions --- //
 
 // Fetch all transactions
