@@ -4,13 +4,13 @@ import logoIcon from "../../assets/icons/moneyGuardLogo.svg";
 
 const students = [
   {
-    name: "Furkan Yücel",
+    name: "Furkan Yucel",
     github: "https://github.com/furkycl",
     linkedin: "https://www.linkedin.com/in/furkycl",
     title: "Team Lead",
   },
   {
-    name: "Cemre Deniz Yıldız",
+    name: "Cemre Deniz Yildiz",
     github: "https://github.com/Cemrdeniz",
     linkedin: "https://www.linkedin.com/in/cemre-yildiz",
     title: "Scrum Master",
@@ -22,7 +22,7 @@ const students = [
     title: "Full Stack Developer",
   },
   {
-    name: "Begüm Narmanlı",
+    name: "Begum Narmanli",
     github: "https://github.com/begumnarmanli",
     linkedin: "https://www.linkedin.com/in/begumnarmanli",
     title: "Full Stack Developer",
@@ -84,7 +84,7 @@ const Footer = () => {
           </div>
 
           <div className={styles.footerInfoContainer}>
-            <span>© 2025 All rights reserved</span>
+            <span>(c) 2025 All rights reserved</span>
             <span className={styles.footerStudentLink} onClick={openModal}>
               GoIT Student
             </span>
@@ -109,7 +109,9 @@ const Footer = () => {
 
             <div className={styles.modalStudentCard}>
               <h3 className={styles.modalStudentName}>{currentStudent.name}</h3>
-              <p className={styles.modalStudentTitle}>{currentStudent.title}</p>
+              <p className={styles.modalStudentTitle}>
+                {currentStudent.title}
+              </p>
               <p className={styles.modalStudentCounter}>
                 {currentStudentIndex + 1} / {students.length}
               </p>
