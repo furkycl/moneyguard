@@ -72,10 +72,7 @@ const StatisticsChart = () => {
               const total = context.dataset.data.reduce((a, b) => a + b, 0);
               const currentValue = context.parsed;
               const percentage = ((currentValue / total) * 100).toFixed(2);
-              label += `${formatCurrency(currentValue).replace(
-                "₺",
-                "₺ "
-              )} (${percentage}%)`;
+              label += `${formatCurrency(currentValue)} (${percentage}%)`;
             }
             return label;
           },
