@@ -1,37 +1,23 @@
-# 💸 MoneyGuard — Kişisel Finans Yönetim Uygulaması
+# MoneyGuard
 
-MoneyGuard, kişisel gelir-gider takibini kolaylaştıran modern ve kullanıcı dostu bir web uygulamasıdır.  
-Harcamalarını kontrol etmek, bütçeni düzenlemek ve finansal farkındalık kazanmak isteyen kullanıcılar için tasarlanmıştır.
+MoneyGuard is a personal finance web application that helps you track income and expenses, stay on top of your balance, and review monthly statistics.
 
-Canlı Demo → **https://aurora-fintech.github.io/moneyguard/**  
-Backend API → **https://wallet.b.goit.study/**  
-Repo → **https://github.com/Aurora-Fintech/moneyguard**
+Live demo: https://aurora-fintech.github.io/moneyguard/  
+Backend API: https://wallet.b.goit.study/  
+Upstream repo: https://github.com/Aurora-Fintech/moneyguard
 
----
+## Features
+- Authentication with JWT (register, login, refresh, logout)
+- Dashboard with balance, recent transactions, and currency/crypto widgets
+- Add, edit, and delete income/expense transactions with categories
+- Monthly statistics with donut chart and category table
+- Currency rates (USD/TRY, EUR/TRY) with trends and crypto sparkline
+- Redux Persist keeps the session after refresh
 
-## 🚀 Özellikler
-
-| Özellik | Açıklama |
-|--------|----------|
-| 🔐 Kullanıcı Kayıt & Giriş | JWT tabanlı kimlik doğrulama |
-| 📊 Dashboard | Gelir & gider özetleri, güncel bakiye |
-| 🧾 İşlem Ekleme | Harcama / Gelir kategorileri ile işlem kaydı |
-| 📈 İstatistikler | Aylık harcama dağılım grafiği (Donut Chart) |
-| 🗂 Kategorilere göre filtreleme | Harcamaları anlamlandırma ve analiz |
-| 🌙 Modern UI | Responsive, temiz ve sezgisel kullanıcı arayüzü |
-| ♻️ Redux Persist | Oturum bilgisi sayfa yenilemelerinde korunur |
-
----
-
-## 🛠 Teknoloji Yığını
-
-| Katman | Teknolojiler |
-|-------|--------------|
-| **Frontend** | React, Vite, React Router, Redux Toolkit, Redux Persist |
-| **UI & Stil** | CSS Modules, Normalize.css |
-| **Grafikler** | react-chartjs-2, Chart.js |
-| **HTTP** | Axios |
-| **Build & Deployment** | GitHub Pages + GitHub Actions CI/CD |
-| **State Yönetimi** | Redux Toolkit (`createSlice`, `createAsyncThunk`) |
-
----
+## Tech Stack
+- React + Vite
+- React Router, Redux Toolkit, Redux Persist
+- Formik, Yup, react-hook-form, react-select, react-datepicker
+- Chart.js / react-chartjs-2, Recharts
+- Axios for API calls
+- CSS Modules + Normalize.css
