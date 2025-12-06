@@ -18,8 +18,11 @@ export default function DashboardPage() {
   const isModalOpen = useSelector((state) => state.transactions?.isModalOpen);
 
   useEffect(() => {
-    dispatch(getTransactions());
-    dispatch(getCategories());
+    const loadData = async () => {
+      await dispatch(getCategories());
+      await dispatch(getTransactions());
+    };
+    loadData();
   }, [dispatch]);
 
   const handleOpenModal = () => dispatch(toggleModal(true));
